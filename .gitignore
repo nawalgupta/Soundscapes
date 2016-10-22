@@ -8,3 +8,5 @@ npm-debug.log
 # FORMATS
 *.gz
 *.DS_Store
+
+package.json
