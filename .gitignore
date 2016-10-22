@@ -1,0 +1,10 @@
+# MIDIJS
+MIDI.js*
+
+# NODE/NPM
+node_modules*
+npm-debug.log
+
+# FORMATS
+*.gz
+*.DS_Store
