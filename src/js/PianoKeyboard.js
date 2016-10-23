@@ -1,4 +1,4 @@
-class PianoLayout() {
+class PianoLayout {
     constructor() {
         this.KeyType = {
             WhiteC: 0,
@@ -42,7 +42,7 @@ class PianoLayout() {
             }
         })
 
-        _initKeys() => {
+        initKeys() {
             var WhiteA, WhiteB, Black, WhiteC, WhiteD, WhiteE, WhiteG, Key, i, j, keyInfo, note;
             keyInfo = this.keyInfo, Key = this.Key;
             WhiteC = Key.WhiteC, WhiteD = Key.WhiteD, WhiteE = Key.WhiteE, WhiteF = Key.WhiteF, WhiteA = Key.WhiteA, WhiteB = Key.WhiteB, Black = Key.Black;
@@ -72,7 +72,7 @@ class PianoLayout() {
             return keyInfo[noteNumber + 7].keyType = WhiteB;
         }
 
-        _initKeyPos() {
+        initKeyPos() {
             var WhiteA, WhiteB, Black, WhiteC, WhiteD, WhiteE, WhiteF, WhiteG, KeyType, blackKeyQuadShift, blackKeyTripletShift, _j, _k, _results, keyInfo, noteNumber, previousKey, previousKeyNote, previousKeyType, shift, whiteKeyStep, xPos;
             KeyType = this.KeyType, keyInfo = this.keyInfo, whiteKeyStep = this.whiteKeyStep, blackKeyTripletShift = this.blackKeyTripletShift, blackKeyQuadShift = this.blackKeyQuadShift;
             WhiteC = KeyType.WhiteC, WhiteD = KeyType.WhiteD, WhiteE = KeyType.WhiteE, WhiteF = KeyType.WhiteF, WhiteG = KeyType.WhiteG, WhiteA = KeyType.WhiteA, WhiteB = KeyType.WhiteB, Black = KeyType.Black;
@@ -135,4 +135,25 @@ class PianoLayout() {
         }
     } // end constructor
 }
+
+class PianoKey {
+    constructor (layout, note) {
+        var Black, KeyType, blackKeyColor, blackKeyHeight, blackKeyLength, blackKeyWidth, blackKeyYPos, blackKeyZPos, geometry, key, keyCenterX, keyDip, keyInfo, keyReleaseSpeed, material, position, whiteKeyColor, whiteKeyLength, whiteKeyWidth, _ref;
+        blackKeyWidth = layout.blackKeyWidth, blackKeyHeight = layout.blackKeyHeight, blackKeyLength = layout.blackKeyLength, blackKeyLength = layout.blackKeyLength, blackKeyColor = layout.blackKeyColor, whiteKeyWidth = layout.whiteKeyWidth, whiteKeyHeight = layout.whiteKeyHeight, whiteKeyLength = layout.whiteKeyLength, whiteKeyColor = layout.whiteKeyColor, blackKeyYPos = layout.blackKeyYPos, blackKeyZPos = layout.blackKeyZPos, keyDip = layout.keyDip, keyInfo = layout.keyInfo, keyReleaseSpeed = layout.keyReleaseSpeed, KeyType = layout.KeyType;
+        Black = KeyType.Black;
+        _ref = keyInfo[note], key = _ref.key, keyCenterX = _ref.keyCenterX;
+        if (key === Black) {
+            geometry = new THREE.BoxGeometry(blackKeyWidth, blackKeyHeight, blackKeyLength);
+            material = new THREE.MeshPhongMaterial({
+                color: blackKeyColor
+            });
+        }
+
+    }
+}
+
+
+
+
+
 
