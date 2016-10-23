@@ -9,4 +9,6 @@ npm-debug.log
 *.gz
 *.DS_Store
 
-package.json
+# INTELLIJ
+.idea/
+
